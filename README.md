@@ -1,44 +1,102 @@
-# Portfolio · David Díaz
+<div align="center">
 
-Portfolio en español con Angular 21 y Tailwind CSS 4.
+# Portfolio · David Díaz Guerra
+
+Portfolio profesional desarrollado con **Angular**, **TypeScript** y **Tailwind CSS**.
+
+[Ver portfolio online](https://portfoliodaviddiaz.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/daviddiazguerra/)
+
+</div>
+
+## Sobre el proyecto
+
+Este repositorio contiene mi portfolio profesional, creado para presentar de forma clara mi experiencia, formación, tecnologías y proyectos de desarrollo web.
+
+El objetivo del proyecto es disponer de una carta de presentación digital propia, responsive y mantenible, que centralice mi perfil como **Desarrollador Web Full Stack**.
+
+## Tecnologías
+
+- **Angular 21**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **HTML5**
+- **CSS**
+- **npm**
+- **Vercel** para el despliegue
+
+## Características
+
+- Diseño responsive adaptado a escritorio, tablet y móvil.
+- Presentación de experiencia profesional y formación.
+- Sección de tecnologías y stack de desarrollo.
+- Portfolio de proyectos con páginas de detalle.
+- Navegación mediante Angular Router.
+- Sección de contacto profesional.
+- Componentización y separación de datos y presentación.
+
+## Demo
+
+El portfolio está desplegado públicamente en Vercel:
+
+**https://portfoliodaviddiaz.vercel.app/**
 
 ## Ejecutar en local
 
-Requisitos: Node.js 24 y npm 11.
+### Requisitos
+
+- Node.js 24
+- npm 11
+
+### Instalación
 
 ```bash
 npm ci
+```
+
+### Servidor de desarrollo
+
+```bash
 npm start
 ```
 
-Abre http://localhost:4200. Ejecuta los comandos dentro de esta carpeta, donde está package.json.
+La aplicación estará disponible en:
 
-## Compilar
+```text
+http://localhost:4200
+```
+
+### Compilación de producción
 
 ```bash
 npm run build
 ```
 
-El resultado se genera en dist/portfolio-david/browser. Para desplegarlo, configura el servidor para devolver index.html en las rutas de la aplicación.
+Los archivos generados se almacenarán en `dist/`.
 
-## Personalización
+## Estructura principal
 
-- Paleta, tipografía y estilos responsive: src/styles.css.
-- Presentación: src/app/sections/hero/hero.html.
-- Tarjetas de proyectos: src/app/sections/projects/projects.html.
-- Fichas: src/app/pages/project-detail/project-detail.html.
-- Experiencia: src/app/data/experience.ts.
-- Formación: src/app/sections/education/education.html.
-- Contacto: src/app/sections/contact/contact.html. Se utiliza el perfil público de X conocido; puedes sustituirlo por tu correo profesional o LinkedIn.
+```text
+src/
+├── app/
+│   ├── data/
+│   ├── pages/
+│   └── sections/
+├── index.html
+├── main.ts
+└── styles.css
+```
 
-No se han inventado titulaciones, métricas, capturas ni demos. La portada utiliza una ilustración genérica de un editor TypeScript, sin referencias a proyectos concretos. La paleta utiliza negro y gris neutro con blanco suave. El azul se limita a botones, enlaces y pequeños detalles, sin teñir fondos ni tarjetas. Proyecto Simracing solo presenta información general. La ruta de demo del taller lleva a su ficha informativa.
+La información de experiencia y proyectos está separada de la presentación para facilitar el mantenimiento y la evolución del portfolio.
 
-Las fuentes usan la pila del sistema, sin descargas externas. El ZIP excluye dependencias, cachés, archivos del editor e historial Git. npm ci reconstruye las dependencias a partir del lockfile incluido.
+## Estado
 
-## Verificación de esta entrega
+Proyecto activo y en evolución. El contenido y las funcionalidades se irán actualizando junto con mi experiencia y nuevos proyectos.
 
-Compilación de producción completada y pruebas existentes superadas. La comprobación visual en navegador queda pendiente porque el navegador de pruebas no pudo descargarse en el entorno de preparación.
+## Autor
 
-## Proyectos
+**David Díaz Guerra**  
+Desarrollador Web Full Stack
 
-Edita src/app/data/projects.ts para añadir proyectos. El proyecto con featured: true ocupa la fila destacada; el resto se coloca debajo en cuatro columnas en escritorio, dos en tablet y una en móvil. Las filas crecen automáticamente. No hay tarjetas de relleno.
+- [LinkedIn](https://www.linkedin.com/in/daviddiazguerra/)
+- [Portfolio](https://portfoliodaviddiaz.vercel.app/)
+
