@@ -1,0 +1,14 @@
+<app-navbar /><main id="contenido" class="detail"><div class="container">
+<a class="text-link" routerLink="/" fragment="proyectos">← Volver a proyectos</a>
+@if(privateProject){
+  <span class="eyebrow" style="margin-top:40px">Proyecto privado · En desarrollo</span>
+  <h1>Proyecto Simracing</h1>
+  <p class="lead">Proyecto personal de software relacionado con el simracing.</p>
+  <div class="detail-content"><h2>Información general</h2><p>Este desarrollo es privado. Por el momento no se comparten sus funcionalidades, tecnologías, imágenes ni detalles de implementación.</p></div>
+}@else{
+  <span class="eyebrow" style="margin-top:40px">Proyecto estrella · GTA V Roleplay</span>
+  <h1>Gestión Taller GTA V RP</h1>
+  <p class="lead">Una aplicación de gestión interna que reúne facturación, empleados, fichajes y estadísticas para un taller de roleplay.</p>
+  <div class="detail-content"><h2>El punto de partida</h2><p>La actividad de un taller implica mantener información de empleados, registrar trabajos y controlar tiempos. El proyecto reúne estas tareas para dar estructura a la gestión diaria.</p><h2>Áreas de la aplicación</h2><ul><li>Facturación y consulta de la actividad del taller.</li><li>Gestión de empleados y registro de fichajes.</li><li>Estadísticas para consultar la actividad.</li><li>Autenticación mediante Discord OAuth2.</li></ul><h2>Enfoque técnico</h2><p>Angular para la interfaz, Spring Boot para la lógica de negocio y MySQL para la persistencia. Discord OAuth2 proporciona el punto de entrada para la autenticación.</p><h2>Estado del proyecto</h2><p>Esta ficha presenta el alcance y las tecnologías del proyecto. No hay una demo pública disponible en este portfolio.</p><div class="actions"><a class="btn btn-primary" href="/#contacto">Hablemos del proyecto ↗</a></div></div>
+}
+</div></main><app-footer />
