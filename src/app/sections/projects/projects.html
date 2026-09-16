@@ -1,17 +1,131 @@
-<section id="proyectos" class="section"><div class="container">
-  <div class="section-head"><div><span class="eyebrow">01 / Proyectos seleccionados</span><h2>Ideas que toman forma.</h2></div><p>Una selección de mi trabajo, con mi proyecto principal y otros desarrollos personales.</p></div>
-  @for(project of featuredProjects; track project.detailUrl){
-    <article class="project-card featured-project">
-      <div class="project-cover"><span class="cover-label">Software de gestión / GTA V Roleplay</span><span class="cover-word">Gestión Taller<span style="color:var(--accent)">.</span><small>GTA V RP</small></span><div class="cover-line"><span>FACTURACIÓN · EQUIPO · CONTROL</span><span>01</span></div></div>
-      <div class="project-body"><span class="status">{{project.status}}</span><h3>{{project.title}}</h3><p>{{project.description}}</p><div class="tags">@for(tech of project.technologies; track tech){<app-tech-badge [name]="tech" />}</div><div class="actions"><a class="btn btn-primary" [routerLink]="project.detailUrl">Conocer el proyecto ↗</a></div></div>
-    </article>
-  }
-  @if(otherProjects.length){
-    <h3 class="other-projects-heading">Otros proyectos</h3>
-    <div class="other-projects-grid">
-      @for(project of otherProjects; track project.detailUrl){
-        <article class="project-card secondary-project"><div class="secondary-project-mark" aria-hidden="true">&lt;/&gt;</div><div class="project-body"><span class="status">{{project.status}}</span><h3>{{project.title}}</h3><p>{{project.description}}</p>@if(project.technologies.length){<div class="tags">@for(tech of project.technologies; track tech){<app-tech-badge [name]="tech" />}</div>}<div class="actions"><a class="text-link" [routerLink]="project.detailUrl">Información general ↗</a></div></div></article>
-      }
+<section id="proyectos" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">01 / Proyectos seleccionados</span>
+        <h2>Ideas que toman forma.</h2>
+      </div>
+      <p>Una selección de mi trabajo, con mi proyecto principal y otros desarrollos personales.</p>
     </div>
-  }
-</div></section>
+
+    @for (project of featuredProjects; track project.detailUrl) {
+      <article class="project-card featured-project">
+        <div class="project-cover">
+          <span class="cover-label">Software de gestión / GTA V Roleplay</span>
+          <span class="cover-word">
+            Gestión Taller<span style="color: var(--accent)">.</span>
+            <small>GTA V RP</small>
+          </span>
+          <div class="cover-line">
+            <span>FACTURACIÓN · EQUIPO · CONTROL</span>
+            <span>01</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <span class="status">{{ project.status }}</span>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="tags">
+            @for (tech of project.technologies; track tech) {
+              <app-tech-badge [name]="tech" />
+            }
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" [routerLink]="project.detailUrl">{{ project.actionLabel }} ↗</a>
+          </div>
+        </div>
+      </article>
+    }
+
+    @if (otherProjects.length) {
+      <h3 class="other-projects-heading">Otros proyectos</h3>
+
+      <div class="other-projects-grid">
+        @for (project of otherProjects; track project.detailUrl) {
+          <article
+            class="project-card secondary-project"
+            [class.secondary-project--gt7]="project.visual === 'gt7'"
+            [class.secondary-project--private]="project.visual === 'private'"
+          >
+            <div class="project-body">
+              <span class="status">{{ project.status }}</span>
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+
+              @if (project.technologies.length) {
+                <div class="tags">
+                  @for (tech of project.technologies; track tech) {
+                    <app-tech-badge [name]="tech" />
+                  }
+                </div>
+              }
+
+              <div class="actions">
+                <a class="text-link" [routerLink]="project.detailUrl">{{ project.actionLabel }} ↗</a>
+              </div>
+            </div>
+
+            @if (project.visual === 'gt7') {
+              <div class="secondary-project-visual gt7-visual" aria-hidden="true">
+                <div class="visual-topline">
+                  <span>GT7 / DAILY RACES</span>
+                  <span class="bot-state"><i></i> BOT ONLINE</span>
+                </div>
+
+                <div class="race-feed">
+                  <div class="race-feed-row">
+                    <span class="race-letter race-a">A</span>
+                    <span class="race-track">WEEKLY DATA</span>
+                    <span class="race-state">READY</span>
+                  </div>
+                  <div class="race-feed-row">
+                    <span class="race-letter race-b">B</span>
+                    <span class="race-track">AUTO UPDATE</span>
+                    <span class="race-state">SYNC</span>
+                  </div>
+                  <div class="race-feed-row">
+                    <span class="race-letter race-c">C</span>
+                    <span class="race-track">DISCORD EMBED</span>
+                    <span class="race-state">POST</span>
+                  </div>
+                </div>
+
+                <div class="visual-command">
+                  <span>&gt; /daily</span>
+                  <span>AUTOMATION · DISCORD</span>
+                </div>
+              </div>
+            } @else if (project.visual === 'private') {
+              <div class="secondary-project-visual private-visual" aria-hidden="true">
+                <div class="private-topline">
+                  <span>SIMRACING MANAGEMENT</span>
+                  <span>PRIVATE</span>
+                </div>
+
+                <div class="private-lock">
+                  <span class="lock-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                      <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+                      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <strong>Development in progress</strong>
+                    <span>Detalles reservados hasta su presentación pública</span>
+                  </div>
+                </div>
+
+                <div class="private-lines">
+                  <i></i><i></i><i></i>
+                </div>
+              </div>
+            } @else {
+              <div class="secondary-project-mark" aria-hidden="true">&lt;/&gt;</div>
+            }
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,4 @@
+.footer-links{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex-wrap:wrap}
+.footer-links a{transition:color .15s}
+.footer-links a:hover{color:var(--text)}
+@media(max-width:680px){.footer-links{justify-content:flex-start;gap:14px}}

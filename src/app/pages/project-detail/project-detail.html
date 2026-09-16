@@ -1,14 +1,163 @@
-<app-navbar /><main id="contenido" class="detail"><div class="container">
-<a class="text-link" routerLink="/" fragment="proyectos">← Volver a proyectos</a>
-@if(privateProject){
-  <span class="eyebrow" style="margin-top:40px">Proyecto privado · En desarrollo</span>
-  <h1>Proyecto Simracing</h1>
-  <p class="lead">Proyecto personal de software relacionado con el simracing.</p>
-  <div class="detail-content"><h2>Información general</h2><p>Este desarrollo es privado. Por el momento no se comparten sus funcionalidades, tecnologías, imágenes ni detalles de implementación.</p></div>
-}@else{
-  <span class="eyebrow" style="margin-top:40px">Proyecto estrella · GTA V Roleplay</span>
-  <h1>Gestión Taller GTA V RP</h1>
-  <p class="lead">Una aplicación de gestión interna que reúne facturación, empleados, fichajes y estadísticas para un taller de roleplay.</p>
-  <div class="detail-content"><h2>El punto de partida</h2><p>La actividad de un taller implica mantener información de empleados, registrar trabajos y controlar tiempos. El proyecto reúne estas tareas para dar estructura a la gestión diaria.</p><h2>Áreas de la aplicación</h2><ul><li>Facturación y consulta de la actividad del taller.</li><li>Gestión de empleados y registro de fichajes.</li><li>Estadísticas para consultar la actividad.</li><li>Autenticación mediante Discord OAuth2.</li></ul><h2>Enfoque técnico</h2><div class="tags" style="margin:0 0 18px"><app-tech-badge name="Angular" /><app-tech-badge name="Spring Boot" /><app-tech-badge name="MySQL" /><app-tech-badge name="Discord OAuth2" /></div><p>Angular para la interfaz, Spring Boot para la lógica de negocio y MySQL para la persistencia. Discord OAuth2 proporciona el punto de entrada para la autenticación.</p><h2>Estado del proyecto</h2><p>Esta ficha presenta el alcance y las tecnologías del proyecto. No hay una demo pública disponible en este portfolio.</p><div class="actions"><a class="btn btn-primary" href="/#contacto">Hablemos del proyecto ↗</a></div></div>
-}
-</div></main><app-footer />
+<app-navbar />
+
+<main
+  id="contenido"
+  class="detail"
+  [class.detail--workshop]="workshopProject"
+  [class.detail--gt7]="gt7Project"
+  [class.detail--private]="privateProject"
+>
+  <div class="container">
+    <a class="text-link" routerLink="/" fragment="proyectos">← Volver a proyectos</a>
+
+    @if (workshopProject) {
+      <span class="eyebrow" style="margin-top: 40px">Proyecto estrella · GTA V Roleplay</span>
+      <h1>Gestión Taller GTA V RP</h1>
+      <p class="lead">
+        Aplicación Full Stack para centralizar la gestión interna de un taller dentro de una comunidad de GTA Roleplay.
+      </p>
+      <div class="project-signature" aria-label="Resumen del proyecto">
+        <span>Full Stack</span><span>Angular + Spring Boot</span><span>Repositorio público</span>
+      </div>
+
+      <div class="detail-content">
+        <h2>El punto de partida</h2>
+        <p>
+          La actividad diaria de un taller requiere coordinar empleados, facturación, tiempos de trabajo, servicios y
+          documentación. El proyecto reúne estas tareas en una única aplicación para estructurar la gestión interna y
+          reducir procesos dispersos.
+        </p>
+
+        <h2>Áreas de la aplicación</h2>
+        <ul>
+          <li>Creación de facturas individuales y por lotes.</li>
+          <li>Historial de facturación con filtros y paginación.</li>
+          <li>Gestión de empleados, rangos y permisos.</li>
+          <li>Registro de fichajes y tiempo trabajado.</li>
+          <li>Gestión de primas semanales, convenios y tasaciones.</li>
+          <li>Consulta de precios, servicios, vehículos y documentación interna.</li>
+          <li>Autenticación mediante Discord OAuth2.</li>
+        </ul>
+
+        <h2>Enfoque técnico</h2>
+        <div class="tags" style="margin: 0 0 18px">
+          <app-tech-badge name="Angular" />
+          <app-tech-badge name="TypeScript" />
+          <app-tech-badge name="Tailwind CSS" />
+          <app-tech-badge name="Java" />
+          <app-tech-badge name="Spring Boot" />
+          <app-tech-badge name="MySQL" />
+          <app-tech-badge name="Discord OAuth2" />
+        </div>
+        <p>
+          El frontend está desarrollado con Angular y TypeScript, mientras que el backend utiliza Java y Spring Boot
+          para exponer la API REST y gestionar la lógica de negocio. MySQL proporciona la persistencia de datos.
+          La autenticación se realiza mediante Discord OAuth2 y las sesiones protegidas utilizan JWT. Las operaciones
+          sensibles vuelven a validar los permisos en backend mediante Spring Security.
+        </p>
+
+        <h2>Estado del proyecto</h2>
+        <p>
+          El código fuente está disponible públicamente en GitHub. La aplicación está destinada al uso interno de la
+          comunidad para la que fue desarrollada, por lo que su despliegue no se presenta como una demo pública del
+          portfolio.
+        </p>
+
+        <div class="actions">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/Alcarin22/LSCCentral.OryzonRP"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver repositorio en GitHub ↗
+          </a>
+          <a class="text-link" routerLink="/" fragment="contacto">Hablemos del proyecto ↗</a>
+        </div>
+      </div>
+    } @else if (gt7Project) {
+      <span class="eyebrow" style="margin-top: 40px">Proyecto personal · En desarrollo</span>
+      <h1>GT7 Daily Bot</h1>
+      <p class="lead">
+        Bot de Discord que recopila, procesa y publica automáticamente información sobre las Carreras Diarias de Gran
+        Turismo 7.
+      </p>
+      <div class="project-signature" aria-label="Resumen del proyecto">
+        <span>Discord Bot</span><span>Automatización</span><span>Repositorio público</span>
+      </div>
+
+      <div class="detail-content">
+        <h2>Objetivo</h2>
+        <p>
+          El proyecto automatiza la publicación semanal de las Carreras Diarias de Gran Turismo 7 dentro de una
+          comunidad de Discord. La información procedente de distintas fuentes públicas se procesa antes de generar una
+          publicación estructurada y fácil de consultar.
+        </p>
+
+        <h2>Funcionalidades actuales</h2>
+        <ul>
+          <li>Publicación de las Carreras Diarias A, B y C.</li>
+          <li>Comando <code>/daily</code> para solicitar una actualización manual.</li>
+          <li>Mensajes estructurados mediante embeds de Discord.</li>
+          <li>Publicaciones provisionales cuando todavía existen datos pendientes de confirmación.</li>
+          <li>Actualización de mensajes existentes para evitar publicaciones duplicadas.</li>
+          <li>Persistencia del estado de las publicaciones semanales.</li>
+          <li>Comprobaciones automáticas mediante tareas programadas.</li>
+        </ul>
+
+        <h2>Enfoque técnico</h2>
+        <div class="tags" style="margin: 0 0 18px">
+          <app-tech-badge name="Node.js" />
+          <app-tech-badge name="JavaScript" />
+          <app-tech-badge name="Discord.js" />
+        </div>
+        <p>
+          El bot se ejecuta sobre Node.js y utiliza JavaScript y Discord.js para la integración con Discord. Axios y
+          Cheerio se encargan de obtener y procesar información pública, Luxon gestiona fechas y zonas horarias y
+          node-cron programa las comprobaciones automáticas.
+        </p>
+
+        <h2>Fuentes de información</h2>
+        <p>
+          Actualmente el proyecto combina información pública de GTSH-Rank y GT GridStats. Al depender de fuentes
+          externas, cambios en la estructura de sus páginas pueden requerir adaptar los procesos de extracción.
+        </p>
+
+        <h2>Estado del proyecto</h2>
+        <p>
+          GT7 Daily Bot continúa en desarrollo. El repositorio público permite consultar su evolución, arquitectura y
+          código fuente.
+        </p>
+
+        <div class="actions">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/Alcarin22/gt7-daily-bot"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver repositorio en GitHub ↗
+          </a>
+          <a class="text-link" routerLink="/" fragment="contacto">Hablemos del proyecto ↗</a>
+        </div>
+      </div>
+    } @else if (privateProject) {
+      <span class="eyebrow" style="margin-top: 40px">Proyecto privado · En desarrollo</span>
+      <h1>Simracing Management</h1>
+      <p class="lead">Proyecto personal Full Stack relacionado con el simracing.</p>
+      <div class="project-signature project-signature--private" aria-label="Estado del proyecto">
+        <span>Proyecto privado</span><span>En desarrollo</span><span>Detalles reservados</span>
+      </div>
+
+      <div class="detail-content">
+        <h2>Información general</h2>
+        <p>
+          Este desarrollo se mantiene privado. Sus funcionalidades, tecnologías, imágenes y detalles de implementación
+          no se compartirán hasta su presentación pública.
+        </p>
+      </div>
+    }
+  </div>
+</main>
+
+<app-footer />

@@ -9,13 +9,13 @@ import { Component } from '@angular/core';
 export class Hero {
   readonly codePreview = `const developer = {
   name: 'David Díaz',
-  focus: 'Full stack',
-  mindset: 'Crear. Aprender. Mejorar.'
+  role: 'Full Stack Developer',
+  focus: 'Soluciones útiles y mantenibles'
 };
 
 const application = {
-  interface: 'Clara y accesible',
-  logic: 'Una estructura sólida',
-  data: 'Todo conectado'
+  frontend: 'Angular + TypeScript',
+  backend: 'Java + Spring Boot',
+  data: 'MySQL + REST APIs'
 };`;
 }

@@ -1,1 +1,26 @@
-<section id="experiencia" class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">03 / Experiencia</span><h2>Mi recorrido profesional.</h2></div><p>Desarrollo de aplicaciones, entornos empresariales y servicios digitales.</p></div>@for(item of items; track item.title){<article class="timeline-item"><span class="timeline-date">{{item.date}}</span><div><h3>{{item.title}}</h3><p>{{item.subtitle}}</p><ul>@for(point of item.points; track point){<li>{{point}}</li>}</ul></div></article>}</div></section>
+<section id="experiencia" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">03 / Experiencia</span>
+        <h2>Mi recorrido profesional.</h2>
+      </div>
+      <p>Experiencia en desarrollo de aplicaciones, CRM y operación de servicios digitales.</p>
+    </div>
+
+    @for (item of items; track item.title) {
+      <article class="timeline-item">
+        <span class="timeline-date">{{ item.date }}</span>
+        <div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.subtitle }}</p>
+          <ul>
+            @for (point of item.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    }
+  </div>
+</section>

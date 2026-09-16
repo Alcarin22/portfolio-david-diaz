@@ -9,9 +9,13 @@ const PALETTE: Record<string, {brand: string; text: string}> = {
   'TypeScript': {brand: '#3178C6', text: '#8CC7FF'},
   'Tailwind CSS': {brand: '#06B6D4', text: '#67E8F9'},
   'Java': {brand: '#E76F00', text: '#FFB566'},
+  'Git': {brand: '#F34F29', text: '#FF9B80'},
+  'GitHub': {brand: '#F0F0F0', text: '#F0F0F0'},
+  'Node.js': {brand: '#5FA04E', text: '#9DD18F'},
   'Spring Boot': {brand: '#6DB33F', text: '#A3D977'},
   'MySQL': {brand: '#4479A1', text: '#91C4E9'},
   'Discord OAuth2': {brand: '#5865F2', text: '#A9B1FF'},
+  'Discord.js': {brand: '#5865F2', text: '#A9B1FF'},
   'Salesforce': {brand: '#00A1E0', text: '#70D6FF'},
   // REST es un estilo de arquitectura: este violeta es una elección de diseño.
   'REST API': {brand: '#A78BFA', text: '#C4B5FD'},
@@ -19,8 +23,8 @@ const PALETTE: Record<string, {brand: string; text: string}> = {
 const ICONS: Record<string, string> = {
   'HTML': 'html', 'CSS': 'css', 'JavaScript': 'javascript',
   'Angular': 'angular', 'TypeScript': 'typescript', 'Tailwind CSS': 'tailwind',
-  'Java': 'java', 'Spring Boot': 'spring', 'MySQL': 'mysql',
-  'Discord OAuth2': 'discord', 'Salesforce': 'salesforce', 'REST API': 'rest-api',
+  'Java': 'java', 'Git': 'git', 'GitHub': 'github', 'Node.js': 'nodejs', 'Spring Boot': 'spring', 'MySQL': 'mysql',
+  'Discord OAuth2': 'discord', 'Discord.js': 'discord', 'Salesforce': 'salesforce', 'REST API': 'rest-api',
 };
 @Component({
   selector: 'app-tech-badge',
