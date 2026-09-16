@@ -3,5 +3,5 @@
 <a class="brand" href="/#inicio" (click)="close()"><span class="monogram">DD</span> David Díaz<span style="color:var(--accent)">.</span></a>
 <button class="menu-toggle" type="button" aria-controls="main-menu" [attr.aria-expanded]="open()" (click)="open.set(!open())">{{open() ? 'Cerrar' : 'Menú'}}</button>
 <div id="main-menu" class="nav-links" [class.open]="open()" (keydown.escape)="close()">
-<a href="/#proyectos" (click)="close()">Proyectos</a><a href="/#sobre-mi" (click)="close()">Sobre mí</a><a href="/#experiencia" (click)="close()">Experiencia</a><a class="extra" href="/#tecnologias" (click)="close()">Tecnologías</a><a class="btn" href="/#contacto" (click)="close()">Hablemos ↗</a>
+<a href="/#proyectos" (click)="close()">Proyectos</a><a href="/#sobre-mi" (click)="close()">Sobre mí</a><a href="/#experiencia" (click)="close()">Experiencia</a><a class="extra" href="/#tecnologias" (click)="close()">Tecnologías</a><a class="btn btn-primary" href="/#contacto" (click)="close()">Hablemos <span aria-hidden="true">↗</span></a>
 </div></nav></header>

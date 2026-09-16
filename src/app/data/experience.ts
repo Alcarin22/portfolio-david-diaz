@@ -7,7 +7,7 @@ export interface TimelineItem {
 
 export const EXPERIENCE_ITEMS: TimelineItem[] = [
   {
-    date: 'Febrero 2025 - Actualidad',
+    date: 'Febrero 2025 - Agosto 2026',
     title: 'Técnico TIC',
     subtitle: 'Agencia Transformación Digital CLM',
     points: [

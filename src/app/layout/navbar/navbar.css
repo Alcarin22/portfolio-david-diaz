@@ -1,0 +1,4 @@
+
+/* Keep the shared primary button style inside the navigation. */
+.nav-links .btn-primary{padding:14px 22px}
+.nav-links .btn-primary:hover{color:#101010}
